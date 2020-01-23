@@ -13,7 +13,7 @@ export const reducer = (state = initialState, action) => {
         isLoading: true
       };
     case 'FETCHING_DATA_SUCCESS':
-      if(action.payload.length > 0) {  
+      if(action.payload.Results.length > 0) {  
         return {
           ...state,
           charactersArray: action.payload,
