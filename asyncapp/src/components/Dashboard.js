@@ -28,10 +28,10 @@ const Dashboard = props => {
   return (
     <>
       <Container className={classes.container}>
-
         <Form/>
         {props.isLoading && <Loader className={classes.loader} type="Circles" color="#somecolor" height={80} width={80}/>}
         {!props.isLoading && props.charactersArray && <CharacterList/>}
+        {props.error && <h2 style={{color: 'black'}}>{props.error}</h2>}
       </Container>
     </>
   )

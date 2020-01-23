@@ -1,7 +1,7 @@
 const initialState = {
   isLoading: false,
   activity: null,
-  error: "",
+  error: null,
   charactersArray: null,
 };
 
@@ -13,9 +13,22 @@ export const reducer = (state = initialState, action) => {
         isLoading: true
       };
     case 'FETCHING_DATA_SUCCESS':
+      if(action.payload.length > 0) {  
+        return {
+          ...state,
+          charactersArray: action.payload,
+          isLoading: false
+        }
+      } else {
+        return {
+          ...state,
+          error: "No results found! Try again?",
+          isLoading: false
+        }
+      }
+    case 'FETCHING_DATA_FAIL':
       return {
         ...state,
-        charactersArray: action.payload,
         isLoading: false
       }
     default:

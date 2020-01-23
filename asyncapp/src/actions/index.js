@@ -9,7 +9,10 @@ export const fetchCharacter = (term) => {
       console.log(response);
       dispatch({type: 'FETCHING_DATA_SUCCESS', payload: response.data})
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+      dispatch({type: 'FETCHING_DATA_FAIL', payload: error})
+    });
   };
 };
 
