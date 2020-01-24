@@ -10,20 +10,23 @@ export const reducer = (state = initialState, action) => {
     case "FETCHING_ACTIVITY_START":
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
+        error: null
       };
     case 'FETCHING_DATA_SUCCESS':
       if(action.payload.Results.length > 0) {  
         return {
           ...state,
           charactersArray: action.payload,
-          isLoading: false
+          isLoading: false,
+          error: null
         }
       } else {
         return {
           ...state,
           error: "No results found! Try again?",
-          isLoading: false
+          isLoading: false,
+          charactersArray: null
         }
       }
     case 'FETCHING_DATA_FAIL':
