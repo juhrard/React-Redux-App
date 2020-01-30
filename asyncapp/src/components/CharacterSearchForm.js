@@ -3,7 +3,7 @@ import { TextField, Button } from '@material-ui/core';
 import { fetchCharacter } from '../actions'
 import { connect } from 'react-redux';
 
-const Form = props => {
+const CharacterSearchForm = props => {
   const [term, setTerm] = useState('');
 
   const handleChanges = (e) => {
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { fetchCharacter }
-)(Form);
+)(CharacterSearchForm);

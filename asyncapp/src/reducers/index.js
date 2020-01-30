@@ -3,6 +3,7 @@ const initialState = {
   activity: null,
   error: null,
   charactersArray: null,
+  logsArray: null
 };
 
 export const reducer = (state = initialState, action) => {
@@ -28,6 +29,13 @@ export const reducer = (state = initialState, action) => {
           isLoading: false,
           charactersArray: null
         }
+      }
+    case 'FETCHING_LOGS_SUCCESS':
+      return {
+        ...state,
+        logsArray: action.payload.rankings,
+        isLoading: false,
+        error: null
       }
     case 'FETCHING_DATA_FAIL':
       return {
