@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "name": "React-Redux-App",
-  "builds": [{ "src": "React-Redux-App/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+  "name": "asyncapp",
+  "builds": [{ "src": "asyncapp/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
   "routes": [
-      { "src": "/(.*)", "dest": "React-Redux-App/$1" }
+      { "src": "/(.*)", "dest": "asyncapp/$1" }
   ]
 }
